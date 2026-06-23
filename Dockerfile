@@ -1,5 +1,5 @@
 # Image to be used
-FROM python:3.9-slim
+FROM python:3.12-slim
 
 # Prevent Python from creating .pyc files
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -14,7 +14,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install dependencies
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy project files
 COPY . .
